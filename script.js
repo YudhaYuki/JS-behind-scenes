@@ -8,13 +8,31 @@ function calculateAge(year) {
 }
 
 
+
+// This isnt function declaration but expression and HOISTING with functions
+// Only work for function declaration
+// So we must comment it out this
+// retirement(1990);
+
 var retirement = function(year) {
     console.log(65 - (2018 - year));
 }
 
-retirement(1990);
 
+// variables
+// console.log(age);
 
+console.log(age);
+var age = 23;
+
+function foo() {
+    console.log(age);    
+    var age = 65;
+    console.log(age);
+}
+
+foo();
+console.log(age);
 
 
 
