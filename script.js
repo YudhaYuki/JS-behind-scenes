@@ -53,25 +53,25 @@
 // First scoping example
 
 
-var a = 'Hello!';
-first();
+// var a = 'Hello!';
+// first();
 
-function first() {
-    var b = 'Hi!';
-    second();
+// function first() {
+//     var b = 'Hi!';
+//     second();
 
-    function second() {
-        var c = 'Hey!';
-        third();
-    }
-}
+//     function second() {
+//         var c = 'Hey!';
+//         third();
+//     }
+// }
 
-function third() {
-    var d = 'John';
-    // console.log(c);
-    console.log(a+d); // We have access to a and d because they're in the scope chain for the 3rd function
+// function third() {
+//     var d = 'John';
+//     // console.log(c);
+//     console.log(a+d); // We have access to a and d because they're in the scope chain for the 3rd function
     
-}
+// }
 
 
 
@@ -103,8 +103,36 @@ function third() {
 ///////////////////////////////////////
 // Lecture: The this keyword
 
+// console.log(this);
 
+/*
+calculateAge(1985);
 
+// regular function not a method. this keyword always points to the window object
+// Because the object of the function that this object attached to
+// Is the global object
+function calculateAge(year) {
+    console.log(2016 - year);
+    console.log(this);
+}
+
+*/
+
+var john = {
+    name: 'John',
+    yearOfBirth: 1990,
+    calculateAge: function() {
+        console.log(this);
+        console.log(2016 - this.yearOfBirth);
+
+        function innerFunction() {
+            console.log(this);
+        }
+        innerFunction();
+    }
+}
+
+john.calculateAge();
 
 
 
